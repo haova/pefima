@@ -18,6 +18,9 @@ module.exports = {
   modules: [
     'nuxt-minimal-admin'
   ],
+  plugins: [
+    { src: '~/plugins/index.js' },
+  ],
   pwa: {
     meta: {
       title: 'Pefima',

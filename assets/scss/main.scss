@@ -9,3 +9,44 @@
     }
   }
 }
+
+@layer components {
+  .select-input {
+    margin: -0.25rem;
+  
+    .ui.selection.dropdown {
+      @apply border-0;
+    }
+  
+    .ui.selection.dropdown,
+    .ui.search.selection.dropdown>input.search {
+      @apply p-1 m-0;
+    }
+
+    .ui.search.selection.dropdown.multiple {
+      @apply pb-0;
+    }
+  
+    .ui.selection.dropdown>.dropdown.icon, 
+    .ui.selection.dropdown>.search.icon {
+      @apply p-1;
+    }
+  
+    .ui.selection.dropdown .menu>.item {
+      padding: 0.5rem 0.25rem !important;
+    }
+    
+    .ui.selection.active.dropdown .menu,
+    .ui.selection.active.dropdown:hover .menu {
+      @apply border-gray-200 shadow-none;
+    }
+
+    .ui.multiple.dropdown>.label {
+      @apply text-xs py-1 pl-1 pr-5 m-0 mb-1 mr-1;
+
+      i.icon.delete {
+        @apply w-4 scale-75;
+      }
+    }
+  }
+}
