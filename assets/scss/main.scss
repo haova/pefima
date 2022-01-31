@@ -42,7 +42,7 @@
     }
 
     .ui.multiple.dropdown>.label {
-      @apply text-xs py-1 pl-1 pr-5 m-0 mb-1 mr-1;
+      @apply text-xs py-0.5 pl-1 pr-5 m-0 mb-1 mr-1;
 
       i.icon.delete {
         @apply w-4 scale-75;

@@ -1,4 +1,10 @@
+import db from './db';
+
 export default ({ app }, inject) => {
+  db.init();
+  
+  inject('db', db);
+  
   inject('utils', {
     formatCurrency(amount, lang='vi-VN', currency='vnd'){
       const formatter = new Intl.NumberFormat(lang, {

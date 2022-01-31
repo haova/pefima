@@ -21,6 +21,8 @@
   "homepage": "https://github.com/anhhaome/pefima#readme",
   "devDependencies": {
     "@nuxtjs/pwa": "^3.3.5",
+    "dexie": "^3.2.0",
+    "indexeddb-export-import": "^2.1.5",
     "moment": "^2.29.1",
     "nuxt": "^2.15.8",
     "sass": "^1.49.0",

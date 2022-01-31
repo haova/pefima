@@ -26,7 +26,7 @@ export default {
 
   data(){
     return {
-      dateRange: { startDate: this.value ? new Date(this.value) : '', endDate: '' }
+      dateRange: { startDate: this.value ? new Date(this.value) : new Date(), endDate: '' }
     }
   },
 

@@ -1,9 +1,10 @@
 <template>
   <input
-    :class="`inline-block w-full focus:outline-none font-bold ${content < 0 ? 'text-red-700' : 'text-green-700'}`"
+    :class="`bg-transparent inline-block w-full focus:outline-none font-bold ${content < 0 ? 'text-red-700' : 'text-green-700'}`"
     :value="formattedValue"
-    @focus="mode = 'input'"
-    @blur="mode = 'preview'"
+    :readonly="readonly"
+    @focus="mode = (readonly ? 'preview' : 'input')"
+    @blur="mode = 'preview'; update()"
     @input="onInput"
   >
 </template>
@@ -12,7 +13,7 @@
 const TIMEOUT = 2000;
 
 export default {
-  props: ['value'],
+  props: ['value', 'readonly'],
 
   data(){
     return {
@@ -44,6 +45,7 @@ export default {
     },
 
     update(){
+      this.loop && clearTimeout(this.loop);
       this.$emit('change', this.content);
     }
   },

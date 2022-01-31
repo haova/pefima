@@ -2,8 +2,10 @@
   <div 
     class="focus:outline-none"
     contenteditable
+    ref="input"
     @input="onInput"
-  >{{ value }}</div>
+    @blur="update"
+  ></div>
 </template>
 
 <script>
@@ -18,6 +20,7 @@ export default {
       loop: null
     }
   },
+
   methods: {
     onInput(e){
       this.$nextTick(() => {
@@ -29,7 +32,27 @@ export default {
     },
 
     update(){
+      this.loop && clearTimeout(this.loop);
       this.$emit('change', this.content);
+    },
+
+    updateContent(){
+      this.$refs.input.innerHTML = this.content;
+    }
+
+  },
+
+  mounted(){
+    this.updateContent();
+  },
+
+  watch: {
+    value(){
+      if (this.value === this.content)
+        return;
+
+      this.content = this.value;
+      this.updateContent();
     }
   }
 }
