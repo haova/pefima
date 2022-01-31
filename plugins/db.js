@@ -21,11 +21,13 @@ const extractControls = (doc, controlNames) => {
 }
 
 const DB = {
-  init(){
+  async init(){
     this.db = new Dexie("PefimaDB");
     this.db.version(1).stores({
       transactions: '++id,detail,source,amount,tags,createdAt'
     });
+
+    await this.db.open();
   },
 
   async clearDB(){

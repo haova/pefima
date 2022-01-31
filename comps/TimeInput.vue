@@ -38,6 +38,12 @@ export default {
       return moment(value).format('YYYY/MM/DD');
     }
   },
+
+  watch: {
+    value(){
+      this.$set(this.dateRange, 'startDate', this.value ? new Date(this.value) : new Date());
+    }
+  }
 }
 </script>
 

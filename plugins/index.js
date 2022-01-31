@@ -1,8 +1,6 @@
 import db from './db';
 
 export default ({ app }, inject) => {
-  db.init();
-  
   inject('db', db);
   
   inject('utils', {

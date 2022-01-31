@@ -3,9 +3,11 @@
     :class="`bg-transparent inline-block w-full focus:outline-none font-bold ${content < 0 ? 'text-red-700' : 'text-green-700'}`"
     :value="formattedValue"
     :readonly="readonly"
+    :type="mode === 'input' ? 'tel' : 'text'"
     @focus="mode = (readonly ? 'preview' : 'input')"
     @blur="mode = 'preview'; update()"
     @input="onInput"
+    @keydown="onKeyDown"
   >
 </template>
 
@@ -35,12 +37,24 @@ export default {
   },
 
   methods: {
+    onKeyDown(e){
+      if (e.key === '-'){
+        e.preventDefault();
+        this.content = -(this.content || 0);
+        this.pendingUpdate();
+      }
+    },
+
+    pendingUpdate(){
+      this.loop && clearTimeout(this.loop);
+      this.loop = setTimeout(() => this.update(), TIMEOUT);
+    },
+
     onInput(e){
       this.$nextTick(() => {
         this.content = parseInt(e.target.value);
 
-        this.loop && clearTimeout(this.loop);
-        this.loop = setTimeout(() => this.update(), TIMEOUT);
+        this.pendingUpdate();
       });
     },
 

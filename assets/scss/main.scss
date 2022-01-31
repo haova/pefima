@@ -4,8 +4,14 @@
 
 @layer components {
   .m-table {
+    @apply relative;
+    
     th, td {
       @apply border p-1;
+    }
+
+    th {
+      @apply border-gray-300;
     }
   }
 }
