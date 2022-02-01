@@ -1,7 +1,8 @@
 module.exports = {
   ssr: false,
+  target: 'static',
   router: {
-    mode: 'hash'
+    base: '/pefima/'
   },
   buildModules: [
     '@nuxt/postcss8',
