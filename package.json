@@ -7,7 +7,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "generate": "nuxt generate",
-    "start": "nuxt start"
+    "start": "nuxt start",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "indexeddb-export-import": "^2.1.5",
     "moment": "^2.29.1",
     "nuxt": "^2.15.8",
+    "push-dir": "^0.4.1",
     "sass": "^1.49.0",
     "sass-loader": "^10.2.1",
     "vue-search-select": "^2.9.5",
