@@ -11,6 +11,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "nedb": "^1.8.0",
     "pinia": "^2.0.11",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12"
@@ -21,11 +22,16 @@
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/test-utils": "^2.0.0-rc.18",
     "autoprefixer": "^10.4.2",
+    "cron-parser": "^4.2.1",
+    "cronstrue": "^1.125.0",
     "cypress": "^9.5.0",
+    "dexie": "^3.2.1",
     "eslint": "^8.5.0",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-vue": "^8.2.0",
+    "indexeddb-export-import": "^2.1.5",
     "jsdom": "^19.0.0",
+    "moment": "^2.29.1",
     "postcss": "^8.4.8",
     "prettier": "^2.5.1",
     "start-server-and-test": "^1.14.0",
