@@ -1,14 +1,15 @@
-const libConfig = require("./lib/tailwind.config");
-const path = require("path");
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
   content: [
-    ...libConfig.content.map((p) => `./` + path.join("./lib", p)),
-    ...libConfig.content,
+    './components/**/*.{js,vue,ts}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './nuxt.config.{js,ts}',
+    './app.vue',
   ],
   theme: {
-    ...libConfig.theme,
+    extend: {},
   },
-  plugins: [...libConfig.plugins],
-};
+  plugins: [],
+}
